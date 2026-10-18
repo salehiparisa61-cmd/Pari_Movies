@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>پری موویز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0A;--s:#161616;--s2:#232323;--t:#F2F2F2;--m:#9A9A9A;--a:#B6F500;--ink:#0A0A0A;--l:#2E2E2E;color-scheme:dark;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--t);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.w{max-width:1100px;margin-inline:auto;padding:0 16px}
+.nav{background:var(--s);border-bottom:1px solid var(--l);position:sticky;top:0;z-index:4}
+.nav .w{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;padding-block:10px}
+.logo{font-weight:800;font-size:1.3rem;color:var(--a)}
+.nav nav{display:flex;gap:16px;font-size:.95rem}
+.nav nav a:hover{color:var(--a)}
+.sf{margin-inline-start:auto;display:flex;gap:6px}
+.sf input{width:150px;max-width:40vw;padding:6px 12px;border-radius:8px;border:1px solid var(--l);background:var(--s2);color:var(--t);font:inherit}
+button,.btn{font:inherit;cursor:pointer;border:0;border-radius:8px;padding:7px 16px;background:var(--a);color:var(--ink);font-weight:600;display:inline-block}
+.ghost{background:var(--s2);color:var(--t)}
+#hero{margin-top:16px;border-radius:16px;min-height:300px;display:flex;align-items:flex-end;padding:24px;position:relative;overflow:hidden}
+#hero .in{max-width:520px}
+#hero h1{font-size:1.9rem;font-weight:800;line-height:1.3}
+#hero p{color:#ddd;margin:8px 0 14px}
+.hc{position:absolute;top:12px;left:12px;display:flex;gap:6px}
+.hc button{padding:4px 12px}
+h2{font-size:1.2rem;margin:28px 0 12px;display:flex;justify-content:space-between;align-items:center}
+h2 a{font-size:.85rem;color:var(--a);font-weight:400}
+.row{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
+.row .c{flex:0 0 140px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.c{display:block}
+.p{aspect-ratio:2/3;border-radius:10px;display:flex;align-items:flex-end;padding:10px;font-weight:800;line-height:1.3;color:#fff}
+.c .m{padding-top:6px;font-size:.85rem}
+.c .m b{display:block;font-weight:600}
+.c .m span{color:var(--m)}
+.c:hover .p{outline:2px solid var(--a)}
+.f{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+select{padding:7px 12px;border-radius:8px;background:var(--s2);color:var(--t);border:1px solid var(--l);font:inherit}
+.gc{background:var(--s);border:1px solid var(--l);border-radius:12px;padding:22px 14px;text-align:center;font-weight:600}
+.gc:hover{border-color:var(--a);color:var(--a)}
+.gc small{display:block;color:var(--m);font-weight:400}
+.d{display:grid;grid-template-columns:220px 1fr;gap:24px;margin-top:20px}
+@media(max-width:640px){.d{grid-template-columns:1fr}.d .p{max-width:220px}}
+.d h1{font-size:1.7rem;font-weight:800;line-height:1.3}
+.d .en{color:var(--m)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.tags span{background:var(--s2);border-radius:20px;padding:2px 12px;font-size:.85rem}
+.tags .r{background:var(--a);color:var(--ink);font-weight:600}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:12px 0;font-size:.95rem}
+dt{color:var(--m)}
+.dl{display:flex;gap:16px;align-items:center;justify-content:space-between;background:var(--s);border:1px solid var(--l);border-radius:10px;padding:10px 14px;margin-bottom:8px}
+.dl b{color:var(--a)}
+.dl.off{opacity:.5}
+details{background:var(--s);border:1px solid var(--l);border-radius:10px;margin-bottom:10px;padding:4px 14px}
+summary{cursor:pointer;padding:8px 0;font-weight:600}
+.ep{padding:8px 0;border-top:1px solid var(--l)}
+.ep small{color:var(--m)}
+.empty{color:var(--m);padding:30px 0;text-align:center}
+footer{margin-top:48px;border-top:1px solid var(--l);background:var(--s);padding:24px 0;color:var(--m);font-size:.9rem}
+footer .w{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer nav{display:flex;gap:14px}
+footer a:hover{color:var(--a)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="w">
+  <a class="logo" href="#/">پری موویز</a>
+  <nav>
+    <a href="#/category/movie">فیلم‌ها</a>
+    <a href="#/category/series">سریال‌ها</a>
+    <a href="#/genre">ژانرها</a>
+  </nav>
+  <form class="sf" id="sf"><input id="sq" type="search" placeholder="جستجو" aria-label="جستجو"><button>جستجو</button></form>
+</div></header>
+<main class="w" id="app"></main>
+<footer><div class="w">
+  <div><b style="color:var(--t)">پری موویز</b><br>معرفی و دانلود فیلم و سریال</div>
+  <nav><a href="#/category/movie">فیلم‌ها</a><a href="#/category/series">سریال‌ها</a><a href="#/genre">ژانرها</a></nav>
+  <div>کانال بله: <a href="https://ble.ir/Pari_Movies" style="color:var(--a)">Pari_Movies@</a></div>
+</div></footer>
+
+<script>
+/* ===== اطلاعات سایت: هر فیلم یا سریال یک آبجکت است =====
+   type: "movie" یا "series" | quality: کیفیت | featured: true یعنی تو اسلایدر صفحه اول
+   poster / backdrop: لینک تصویر (اگه خالی باشه، رنگ خودکار ساخته می‌شه)
+   downloads: [{q:"1080p", size:"1.5GB", url:"لینک"}]
+   episodes (فقط سریال): [{s:فصل, e:قسمت, title, dur, downloads:[...]}] */
+const DB=[
+ {id:1,fa:"فیلم نمونه اول",en:"Sample Movie One",type:"movie",year:1403,genres:["درام","عاشقانه"],quality:"1080p",rating:8.1,dur:"۱۱۰ دقیقه",country:"ایران",lang:"فارسی",summary:"خلاصه داستان فیلم اینجا نوشته می‌شه.",trailer:"",poster:"",backdrop:"",featured:true,downloads:[{q:"1080p",size:"1.8GB",url:""},{q:"720p",size:"900MB",url:""}]},
+ {id:2,fa:"فیلم نمونه دوم",en:"Sample Movie Two",type:"movie",year:1402,genres:["کمدی"],quality:"720p",rating:7.2,dur:"۹۵ دقیقه",country:"ایران",lang:"فارسی",summary:"خلاصه داستان فیلم اینجا نوشته می‌شه.",trailer:"",poster:"",backdrop:"",featured:false,downloads:[{q:"720p",size:"850MB",url:""}]},
+ {id:3,fa:"فیلم نمونه سوم",en:"Sample Movie Three",type:"movie",year:1401,genres:["ترسناک","هیجان‌انگیز"],quality:"1080p",rating:6.9,dur:"۱۰۲ دقیقه",country:"آمریکا",lang:"انگلیسی",summary:"خلاصه داستان فیلم اینجا نوشته می‌شه.",trailer:"",poster:"",backdrop:"",featured:true,downloads:[{q:"1080p",size:"2GB",url:""}]},
+ {id:4,fa:"سریال نمونه اول",en:"Sample Series One",type:"series",year:1403,genres:["درام"],quality:"1080p",rating:8.8,dur:"۴۵ دقیقه",country:"ایران",lang:"فارسی",summary:"خلاصه داستان سریال اینجا نوشته می‌شه.",trailer:"",poster:"",backdrop:"",featured:true,downloads:[],
+  episodes:[{s:1,e:1,title:"قسمت اول",dur:"۴۵ دقیقه",downloads:[{q:"1080p",size:"700MB",url:""}]},{s:1,e:2,title:"قسمت دوم",dur:"۴۴ دقیقه",downloads:[{q:"1080p",size:"680MB",url:""}]},{s:2,e:1,title:"قسمت اول فصل دوم",dur:"۴۶ دقیقه",downloads:[{q:"720p",size:"350MB",url:""}]}]},
+ {id:5,fa:"سریال نمونه دوم",en:"Sample Series Two",type:"series",year:1402,genres:["ماجراجویی","هیجان‌انگیز"],quality:"720p",rating:7.7,dur:"۵۰ دقیقه",country:"آمریکا",lang:"انگلیسی",summary:"خلاصه داستان سریال اینجا نوشته می‌شه.",trailer:"",poster:"",backdrop:"",featured:false,downloads:[],
+  episodes:[{s:1,e:1,title:"قسمت اول",dur:"۵۰ دقیقه",downloads:[{q:"720p",size:"400MB",url:""}]}]},
+ {id:6,fa:"سریال نمونه سوم",en:"Sample Series Three",type:"series",year:1401,genres:["کمدی","عاشقانه"],quality:"1080p",rating:7.4,dur:"۳۰ دقیقه",country:"ایران",lang:"فارسی",summary:"خلاصه داستان سریال اینجا نوشته می‌شه.",trailer:"",poster:"",backdrop:"",featured:false,downloads:[],
+  episodes:[{s:1,e:1,title:"قسمت اول",dur:"۳۰ دقیقه",downloads:[{q:"1080p",size:"500MB",url:""}]}]}
+];
+
+const $=s=>document.querySelector(s), app=$("#app");
+const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+const bg=(t,k)=>{const h=hue(t.fa),u=t[k];return `background:${u?`url(${u}) center/cover,`:""}linear-gradient(160deg,hsl(${h} 45% 30%),hsl(${(h+40)%360} 50% 12%))`};
+const poster=t=>`<div class="p" style="${bg(t,"poster")}">${t.poster?"":t.fa}</div>`;
+const card=t=>`<a class="c" href="#/title/${t.id}">${poster(t)}<div class="m"><b>${t.fa}</b><span>${t.year} · ★ ${t.rating}</span></div></a>`;
+const grid=l=>l.length?`<div class="grid">${l.map(card).join("")}</div>`:'<p class="empty">موردی پیدا نشد.</p>';
+const row=(h,l,href)=>`<h2>${h}${href?`<a href="${href}">همه</a>`:""}</h2><div class="row">${l.map(card).join("")}</div>`;
+const byNew=(a,b)=>b.year-a.year||b.id-a.id, byRate=(a,b)=>b.rating-a.rating;
+const genresAll=()=>[...new Set(DB.flatMap(t=>t.genres))];
+const dlHTML=d=>`<a class="dl${d.url?"":" off"}" href="${d.url||"#"}" ${d.url?'target="_blank" rel="noopener"':""}><span>${d.q}</span><span>${d.size}</span><b>${d.url?"دانلود":"به‌زودی"}</b></a>`;
+
+/* ---------- اسلایدر صفحه اول ---------- */
+let hi=0;
+const feat=()=>DB.filter(t=>t.featured);
+function heroIn(){
+  const f=feat(); if(!f.length) return "";
+  const t=f[hi%f.length];
+  return `<div class="in"><h1>${t.fa}</h1><p>${t.summary}</p><a class="btn" href="#/title/${t.id}">مشاهده و دانلود</a></div>
+  <div class="hc"><button class="ghost" onclick="hero(-1)" aria-label="قبلی">›</button><button class="ghost" onclick="hero(1)" aria-label="بعدی">‹</button></div>`;
+}
+window.hero=d=>{const n=feat().length;hi=(hi+d+n)%n;const h=$("#hero");h.innerHTML=heroIn();h.style.cssText=bg(feat()[hi],"backdrop")};
+
+/* ---------- صفحه‌ها (هر کدوم [html, after] برمی‌گردونه) ---------- */
+function home(){
+  const f=feat();
+  const h=f.length?`<div id="hero" style="${bg(f[hi%f.length],"backdrop")}">${heroIn()}</div>`:"";
+  return [h+row("جدیدترین فیلم‌ها",DB.filter(t=>t.type=="movie").sort(byNew),"#/category/movie")
+    +row("جدیدترین سریال‌ها",DB.filter(t=>t.type=="series").sort(byNew),"#/category/series")
+    +row("برترین‌ها",[...DB].sort(byRate).slice(0,10))];
+}
+function cat(type){
+  const name=type=="series"?"سریال‌ها":"فیلم‌ها";
+  const list=DB.filter(t=>t.type==type);
+  const qs=[...new Set(list.map(t=>t.quality))];
+  const html=`<h2>${name}</h2><div class="f">
+    <select id="fg" aria-label="ژانر"><option value="">همه ژانرها</option>${genresAll().map(g=>`<option>${g}</option>`).join("")}</select>
+    <select id="fq" aria-label="کیفیت"><option value="">همه کیفیت‌ها</option>${qs.map(q=>`<option>${q}</option>`).join("")}</select>
+    <select id="fs" aria-label="مرتب‌سازی"><option value="n">جدیدترین</option><option value="r">بیشترین امتیاز</option></select>
+  </div><div id="g"></div>`;
+  const after=()=>{
+    const go=()=>{
+      let l=list.filter(t=>(!$("#fg").value||t.genres.includes($("#fg").value))&&(!$("#fq").value||t.quality==$("#fq").value));
+      l.sort($("#fs").value=="r"?byRate:byNew); $("#g").innerHTML=grid(l);
+    };
+    ["#fg","#fq","#fs"].forEach(s=>$(s).onchange=go); go();
+  };
+  return [html,after];
+}
+function genres(){
+  return [`<h2>ژانرها</h2><div class="grid">${genresAll().map(g=>`<a class="gc" href="#/genre/${encodeURIComponent(g)}">${g}<small>${DB.filter(t=>t.genres.includes(g)).length} اثر</small></a>`).join("")}</div>`];
+}
+function genre(g){
+  return [`<h2>ژانر ${g}</h2>`+grid(DB.filter(t=>t.genres.includes(g)).sort(byNew))];
+}
+function search(q){
+  let re; try{re=new RegExp(q,"i")}catch(e){re=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"i")}
+  const l=q?DB.filter(t=>re.test(t.fa)):[];
+  return [`<h2>نتیجه جستجو: <span id="st"></span></h2>`+(q?grid(l):'<p class="empty">عنوان فارسی فیلم یا سریال رو بنویس.</p>'),()=>{$("#st").textContent=q}];
+}
+function title(id){
+  const t=DB.find(x=>x.id==id); if(!t) return nf();
+  const eps=t.episodes||[], seasons=[...new Set(eps.map(e=>e.s))].sort((a,b)=>a-b);
+  const sim=DB.filter(x=>x.id!=t.id&&x.genres.some(g=>t.genres.includes(g))).slice(0,8);
+  return [`<div class="d"><div>${poster(t)}</div><div>
+    <h1>${t.fa}</h1><div class="en">${t.en||""}</div>
+    <div class="tags"><span class="r">★ ${t.rating}</span><span>${t.year}</span><span>${t.quality}</span>${t.genres.map(g=>`<a href="#/genre/${encodeURIComponent(g)}"><span>${g}</span></a>`).join("")}</div>
+    <p>${t.summary}</p>
+    <dl><dt>مدت</dt><dd>${t.dur}</dd><dt>کشور</dt><dd>${t.country}</dd><dt>زبان</dt><dd>${t.lang}</dd></dl>
+    ${t.trailer?`<a class="btn ghost" href="${t.trailer}" target="_blank" rel="noopener">تماشای تریلر</a>`:""}
+  </div></div>`
+  +(t.downloads&&t.downloads.length?`<h2>لینک‌های دانلود</h2>${t.downloads.map(dlHTML).join("")}`:"")
+  +(seasons.length?`<h2>قسمت‌ها</h2>${seasons.map(s=>`<details ${s==seasons[0]?"open":""}><summary>فصل ${s}</summary>${eps.filter(e=>e.s==s).sort((a,b)=>a.e-b.e).map(e=>`<div class="ep"><b>قسمت ${e.e}: ${e.title}</b> <small>${e.dur}</small>${e.downloads.map(dlHTML).join("")}</div>`).join("")}</details>`).join("")}`:"")
+  +(sim.length?row("آثار مشابه",sim):"")];
+}
+const nf=()=>['<p class="empty">صفحه پیدا نشد. <a href="#/" style="color:var(--a)">برگشت به خانه</a></p>'];
+
+/* ---------- مسیریابی ---------- */
+function route(){
+  const h=decodeURIComponent(location.hash.slice(1)||"/").split("/").filter(Boolean);
+  let r;
+  if(!h.length) r=home();
+  else if(h[0]=="category") r=cat(h[1]);
+  else if(h[0]=="genre") r=h[1]?genre(h[1]):genres();
+  else if(h[0]=="search") r=search(h.slice(1).join("/"));
+  else if(h[0]=="title") r=title(h[1]);
+  else r=nf();
+  app.innerHTML=r[0]; if(r[1]) r[1](); scrollTo(0,0);
+}
+$("#sf").onsubmit=e=>{e.preventDefault();const v=$("#sq").value.trim();if(v)location.hash="#/search/"+encodeURIComponent(v)};
+addEventListener("hashchange",route); route();
+</script>
+</body>
+</html>
